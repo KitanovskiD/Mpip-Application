@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initListeners() {
         Button btn = findViewById(R.id.first_button);
+        Button navButton = findViewById(R.id.nav_activity);
 
         final EditText first_name = findViewById(R.id.first_name);
         final EditText last_name = findViewById(R.id.last_name);
@@ -45,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(MainActivity.this, "Polinjata se prazni!", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        navButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, NavActivity.class);
+
+                startActivity(i);
             }
         });
     }
